@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{{floor}}F {{room_name}} - THIRD eye</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div class="ThirdEyeUI">
+    <p>
+        ただいま<span id="RealtimeClockArea"></span>現在の{{floor}}Fの{{room_name}}の混雑状況は？
+    </p>
+
+    {% if ticket_counter_img or false %}
+        <figure class="gakusyoku">
+            <img src="{{ticket_counter_img}}" alt="shokudo2の画像" title="SHOKUDO2">
+            <figcaption>券売機前</figcaption>
+        </figure>
+    {% endif %}
+    {% if room_img or false %}
+        <figure class="gakusyoku">
+            <img src="{{room_img}}" alt="shokudo1の画像" title="SHOKUDO1">
+            <figcaption>学食内</figcaption>
+        </figure>
+    {% endif %}
+    <a href="/index.html">トップページへ</a>
+    <div class="logo">THIRD eye</div>
+</div>
+<script type="text/javascript" src="/updater.js"></script>
+</body>
+</html>
+
