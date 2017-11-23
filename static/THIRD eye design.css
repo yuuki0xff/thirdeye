@@ -1,0 +1,64 @@
+body {
+    background-color: honeydew;
+}
+
+table {
+    background-color: oldlace;
+}
+
+p {
+    font-size: 10vw;
+    color: gray;
+}
+
+td {
+    font-size: 10vw;
+    color: black;
+}
+
+.yane {
+    position: relative;
+    font-size: 0;
+}
+
+.yane p {
+    position: absolute;
+    color: black;
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+}
+
+.kouseitou,
+.kouseitou > .yane > img,
+.kouseitou > table {
+    width: 100%;
+}
+
+.ThirdEyeUI {
+    text-align: center;
+}
+
+#RealtimeClockArea {
+    color: black;
+    background-color: white;
+    font-weight: bold;
+    border: solid 3px #000000;
+}
+
+.logo {
+    margin-top: 3em;
+}
+
+.gakusyoku {
+    padding: 0.5em 1em;
+    border: solid 3px #000000;
+    background-color: white;
+}
+
+.gakusyoku img {
+    max-width: 100%;
+}
+
