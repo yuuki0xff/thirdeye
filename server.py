@@ -41,4 +41,4 @@ def static(filepath: str = 'index.html'):
     return bottle.static_file(filepath, root='./static/')
 
 
-app.run(host='localhost', port=8080)
+app.run(host='0.0.0.0', port=8080)
