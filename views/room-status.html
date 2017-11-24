@@ -12,6 +12,12 @@
         ただいま<span id="RealtimeClockArea"></span>現在の{{floor}}Fの{{room_name}}の混雑状況は？
     </p>
 
+    {% if free_space_img or false %}
+        <figure class="gakusyoku">
+            <img src="{{free_space_img}}" alt="フリースペースの画像">
+            <figcaption>フリースペース</figcaption>
+        </figure>
+    {% endif %}
     {% if ticket_counter_img or false %}
         <figure class="gakusyoku">
             <img src="{{ticket_counter_img}}" alt="shokudo2の画像" title="SHOKUDO2">
