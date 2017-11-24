@@ -21,14 +21,14 @@ room_config = {
         'room_name': 'スエヒロ',
         'inside_img': '/img/3F_A_inside.jpg',
         'counter_img': '/img/3F_A_counter.jpg',
-        'ticket_counter_img': '/img/3F_A_ticket.jpg',
+        'ticket_counter_img': '/img/3F_ticket.jpg',
     },
     '3F-B': {
         'floor': 3,
         'room_name': '',
         'inside_img': '/img/3F_B_inside.jpg',
         'counter_img': '/img/3F_B_counter.jpg',
-        'ticket_counter_img': '/img/3F_B_ticket.jpg',
+        'ticket_counter_img': '/img/3F_ticket.jpg',
     },
     '4F-C': {
         'floor': 4,
