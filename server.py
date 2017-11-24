@@ -43,8 +43,6 @@ room_config = {
         'room_name': 'D食堂',
         'inside_img': '/img/4F_D_inside1.jpg',
         'inside2_img': '/img/4F_D_inside2.jpg',
-        'counter_img': '/img/4F_D_counter.jpg',
-        'ticket_counter_img': '/img/4F_D_ticket.jpg',
     },
 }
 
