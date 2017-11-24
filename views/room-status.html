@@ -24,9 +24,15 @@
             <figcaption>券売機前</figcaption>
         </figure>
     {% endif %}
-    {% if room_img or false %}
+    {% if counter or false %}
         <figure class="gakusyoku">
-            <img src="{{room_img}}" alt="学食内の画像">
+            <img src="{{counter_img}}" alt="カウンター">
+            <figcaption>カウンター前</figcaption>
+        </figure>
+    {% endif %}
+    {% if inside_img or false %}
+        <figure class="gakusyoku">
+            <img src="{{inside_img}}" alt="学食内の画像">
             <figcaption>学食内</figcaption>
         </figure>
     {% endif %}

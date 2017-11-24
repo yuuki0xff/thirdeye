@@ -6,24 +6,43 @@ app = bottle.Bottle()
 room_config = {
     '1F': {
         'floor': 1,
-        'room_name': '休憩エリア'
+        'room_name': '休憩エリア',
+        'free_space_img': '/img/1F_free_space.jpg',
     },
     '2F': {
         'floor': 2,
-        'room_name': '2階の食堂',
-        'room_img': '/shokudo01-1.png',
+        'room_name': 'ROSE cafe',
+        'inside_img': '/img/2F_inside.jpg',
+        'counter_img': '/img/2F_counter.jpg',
+        'ticket_counter_img': '/img/2F_ticket.jpg',
     },
     '3F-A': {
         'floor': 3,
-        'room_name': '3階のA食堂',
+        'room_name': 'スエヒロ',
+        'inside_img': '/img/3F_A_inside.jpg',
+        'counter_img': '/img/3F_A_counter.jpg',
+        'ticket_counter_img': '/img/3F_A_ticket.jpg',
     },
     '3F-B': {
         'floor': 3,
-        'room_name': '3階のB食堂',
+        'room_name': '',
+        'inside_img': '/img/3F_B_inside.jpg',
+        'counter_img': '/img/3F_B_counter.jpg',
+        'ticket_counter_img': '/img/3F_B_ticket.jpg',
     },
-    '4F-A': {
+    '4F-C': {
         'floor': 4,
-        'room_name': '4階のA食堂',
+        'room_name': 'C食堂',
+        'inside_img': '/img/4F_C_inside.jpg',
+        'counter_img': '/img/4F_C_counter.jpg',
+        'ticket_counter_img': '/img/4F_C_ticket.jpg',
+    },
+    '4F-D': {
+        'floor': 4,
+        'room_name': 'D食堂',
+        'inside_img': '/img/4F_D_inside.jpg',
+        'counter_img': '/img/4F_D_counter.jpg',
+        'ticket_counter_img': '/img/4F_D_ticket.jpg',
     },
 }
 
