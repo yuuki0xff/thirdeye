@@ -33,7 +33,7 @@ room_config = {
     '4F-C': {
         'floor': 4,
         'room_name': 'C食堂',
-        'inside_img': '/img/4F_C_inside.jpg',
+        'inside_img': '/img/4F_C_inside1.jpg',
         'inside2_img': '/img/4F_C_inside2.jpg',
         'counter_img': '/img/4F_C_counter.jpg',
         'ticket_counter_img': '/img/4F_C_ticket.jpg',
@@ -41,7 +41,7 @@ room_config = {
     '4F-D': {
         'floor': 4,
         'room_name': 'D食堂',
-        'inside_img': '/img/4F_D_inside.jpg',
+        'inside_img': '/img/4F_D_inside1.jpg',
         'inside2_img': '/img/4F_D_inside2.jpg',
         'counter_img': '/img/4F_D_counter.jpg',
         'ticket_counter_img': '/img/4F_D_ticket.jpg',
