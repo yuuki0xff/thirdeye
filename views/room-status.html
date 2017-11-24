@@ -33,7 +33,7 @@
     {% if inside_img or false %}
         <figure class="gakusyoku">
             <img src="{{inside_img}}" alt="学食内の画像">
-            {% inside2_img or false %} <img src="{{inside2_img}}" alt="学食内の画像"> {% endif %}
+            {% if inside2_img or false %} <img src="{{inside2_img}}" alt="学食内の画像"> {% endif %}
             <figcaption>学食内</figcaption>
         </figure>
     {% endif %}
