@@ -57,7 +57,7 @@ def show_room(room_id: str):
 
 
 @app.get('/')
-@app.get('/<filepath>')
+@app.get('/<filepath:re:.*>')
 def static(filepath: str = 'index.html'):
     return bottle.static_file(filepath, root='./static/')
 
