@@ -36,7 +36,7 @@ room_config = {
         'inside_img': '/img/4F_C_inside1.jpg',
         'inside2_img': '/img/4F_C_inside2.jpg',
         'counter_img': '/img/4F_C_counter.jpg',
-        'ticket_counter_img': '/img/4F_C_ticket.jpg',
+        'ticket_counter_img': '/img/4F_ticket.jpg',
     },
     '4F-D': {
         'floor': 4,
