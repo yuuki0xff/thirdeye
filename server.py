@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
 import bottle
+import gevent.monkey
+
+gevent.monkey.patch_all()
 
 app = bottle.Bottle()
 
@@ -60,4 +63,4 @@ def static(filepath: str = 'index.html'):
     return bottle.static_file(filepath, root='./static/')
 
 
-app.run(host='0.0.0.0', port=8080)
+app.run(host='0.0.0.0', port=8080, server='gevent')
