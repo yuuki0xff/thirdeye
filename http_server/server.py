@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
-import bottle
 import gevent.monkey
-
 gevent.monkey.patch_all()
 
+import bottle
 app = bottle.Bottle()
 
 room_config = {
