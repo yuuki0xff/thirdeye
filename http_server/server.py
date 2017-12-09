@@ -2,67 +2,36 @@
 import gevent.monkey
 gevent.monkey.patch_all()
 
-import bottle
 import os
+import sys
 import tempfile
+
+import bottle
+import yaml
+
 app = bottle.Bottle()
 
-room_config = {
-    '1F': {
-        'floor': 1,
-        'room_name': '休憩エリア',
-        'free_space_img': '/img/1F_free_space.jpg',
-    },
-    '2F': {
-        'floor': 2,
-        'room_name': 'ROSE cafe',
-        'inside_img': '/img/2F_inside.jpg',
-        'counter_img': '/img/2F_counter.jpg',
-        'ticket_counter_img': '/img/2F_ticket.jpg',
-    },
-    '3F-A': {
-        'floor': 3,
-        'room_name': 'スエヒロ',
-        'inside_img': '/img/3F_A_inside.jpg',
-        'counter_img': '/img/3F_A_counter.jpg',
-        'ticket_counter_img': '/img/3F_ticket.jpg',
-    },
-    '3F-B': {
-        'floor': 3,
-        'room_name': '',
-        'inside_img': '/img/3F_B_inside.jpg',
-        'counter_img': '/img/3F_B_counter.jpg',
-        'ticket_counter_img': '/img/3F_ticket.jpg',
-    },
-    '4F-C': {
-        'floor': 4,
-        'room_name': 'C食堂',
-        'inside_img': '/img/4F_C_inside1.jpg',
-        'inside2_img': '/img/4F_C_inside2.jpg',
-        'counter_img': '/img/4F_C_counter.jpg',
-        'ticket_counter_img': '/img/4F_ticket.jpg',
-    },
-    '4F-D': {
-        'floor': 4,
-        'room_name': 'D食堂',
-        'inside_img': '/img/4F_D_inside1.jpg',
-        'inside2_img': '/img/4F_D_inside2.jpg',
-    },
-}
+room_config = {}
+senders = {}
 
-# senders[sender_id]['cameras'][camera_id]['image_name']
-senders = {
-    # sender_id
-    '0': {
-        'secret': 'sender_secret',
-        'cameras': {
-            '0': {
-                'description': '設置場所'
-            },
-        }
-    }
-}
 
+def load_config():
+    global room_config
+    global senders
+
+    try:
+        config_file = os.environ['THIRD_EYE_CONFIG']
+    except KeyError:
+        print('Should set the "THIRD_EYE_CONFIG" environment value', file=sys.stderr)
+        sys.exit(1)
+
+    with open(config_file, 'r') as f:
+        config = yaml.load(f)
+    room_config = config['room_config']
+    senders = config['senders']
+
+
+load_config()
 
 def has_auth(sender_id: str, sender_secret: str) -> bool:
     try:
