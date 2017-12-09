@@ -1,8 +1,9 @@
 #!/usr/bin/env python2
+import logging as _logging
 import os
 import time
 import traceback
-import logging as _logging
+
 import cv2
 import requests
 
@@ -34,13 +35,13 @@ def get_photo(camera):
     return bytes(buf)
 
 
-def send_photo(api, client_id, client_secret, buf):
+def send_photo(session, url, buf):
     for i in range(10):
         try:
-            ret = requests.post(api, data=buf, auth=(client_id, client_secret))
+            ret = session.put(url, data=buf)
             if ret.ok:
                 return
-            raise SendError(ret.reason)
+            raise SendError(ret.status_code, ret.reason, ret.text)
         except Exception:
             logger.error('Failed to send a photo: {}'.format(traceback.format_exc()))
 
@@ -56,20 +57,31 @@ def main():
     try:
         interval = int(os.environ.get('PHOTO_SENDER_INTERVAL', '60'))
         api = os.environ['PHOTO_SENDER_API']
-        client_id = os.environ['PHOTO_SENDER_CLIENT_ID']
-        client_secret = os.environ['PHOTO_SENDER_CLIENT_SECRET']
+        sender_id = os.environ['PHOTO_SENDER_ID']
+        sender_secret = os.environ['PHOTO_SENDER_SECRET']
 
         logger.debug('interval = {}'.format(interval))
         logger.debug('api = {}'.format(api))
-        logger.debug('client_id = {}'.format(client_id))
-        logger.debug('client_secret = {}'.format(client_secret))
+        logger.debug('id = {}'.format(sender_id))
+        logger.debug('secret = {}'.format(sender_secret))
         logger.debug('Configuration loaded')
     except KeyError as e:
         key_name = e.args[0]
         logger.critical('Should set the environment value named {}'.format(key_name))
         return 1
-    is_first = True
 
+    session = requests.Session()
+    session.headers.update({
+        'X-ThirdEye-Photo-Sender-ID': sender_id,
+        'X-ThirdEye-Photo-Sender-Secret': sender_secret,
+    })
+    url = '{base_url}/images/{sender_id}/cameras/{camera_id}.png'.format(
+        base_url=api,
+        sender_id=sender_id,
+        camera_id=0,
+    )
+
+    is_first = True
     while True:
         try:
             if not is_first:
@@ -84,7 +96,7 @@ def main():
                 buf = get_photo(camera)
 
                 logger.debug('Sending a photo')
-                send_photo(api, client_id, client_secret, buf)
+                send_photo(session, url, buf)
             finally:
                 camera.release()
             logger.info('Sended a photo')

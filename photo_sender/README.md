@@ -19,9 +19,9 @@ sudo python2 -m pip install requests
 ```bash
 export LOG_LEVEL=INFO
 export PHOTO_SENDER_INTERVAL=60
-export PHOTO_SENDER_API=https://example.com/api
-export PHOTO_SENDER_CLIENT_ID=xxxxx
-export PHOTO_SENDER_CLIENT_SECRET=xxxxx
+export PHOTO_SENDER_API=https://example.com
+export PHOTO_SENDER_ID=xxxxx
+export PHOTO_SENDER_SECRET=xxxxx
 
 python2 photo_sender.py
 ```
