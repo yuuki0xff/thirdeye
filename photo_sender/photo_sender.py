@@ -58,8 +58,8 @@ def main():
     try:
         interval = int(os.environ.get('PHOTO_SENDER_INTERVAL', '60'))
         api = os.environ['PHOTO_SENDER_API']
-        sender_id = os.environ['PHOTO_SENDER_ID']
-        camera_id = os.environ['PHOTO_CAMERA_ID']
+        sender_id = int(os.environ['PHOTO_SENDER_ID'])
+        camera_id = int(os.environ['PHOTO_CAMERA_ID'])
         sender_secret = os.environ['PHOTO_SENDER_SECRET']
 
         logger.debug('interval = {}'.format(interval))
