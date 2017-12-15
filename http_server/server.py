@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import gevent.monkey
+
 gevent.monkey.patch_all()
 
 import os
@@ -32,6 +33,7 @@ def load_config():
 
 
 load_config()
+
 
 def has_auth(sender_id: str, sender_secret: str) -> bool:
     try:
@@ -94,6 +96,7 @@ class ImageStore:
 
 
 images = ImageStore('/var/tmp/thirdeye-images')
+
 
 @app.get('/status/<room_id>.html')
 def show_room(room_id: str):
