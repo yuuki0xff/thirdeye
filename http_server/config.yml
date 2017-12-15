@@ -4,37 +4,37 @@ room_config:
   '1F':
     floor: 1
     room_name: '休憩エリア'
-    free_space_img: '/img/1F_free_space.jpg'
+    free_space_img: '/images/0/cameras/0.png'
   '2F':
     floor: 2
     room_name: 'ROSE cafe'
-    inside_img: '/img/2F_inside.jpg'
-    counter_img: '/img/2F_counter.jpg'
-    ticket_counter_img: '/img/2F_ticket.jpg'
+    inside_img: '/images/2/cameras/0.png'
+    counter_img: '/images/2/cameras/1.png'
+    ticket_counter_img: '/images/1/cameras/0.png'
   '3F-A':
     floor: 3
     room_name: 'スエヒロ'
-    inside_img: '/img/3F_A_inside.jpg'
-    counter_img: '/img/3F_A_counter.jpg'
-    ticket_counter_img: '/img/3F_ticket.jpg'
+    inside_img: '/images/4/cameras/0.png'
+    counter_img: '/images/4/cameras/1.png'
+    ticket_counter_img: '/images/3/cameras/0.png'
   '3F-B':
     floor: 3
     room_name: ''
-    inside_img: '/img/3F_B_inside.jpg'
-    counter_img: '/img/3F_B_counter.jpg'
-    ticket_counter_img: '/img/3F_ticket.jpg'
+    inside_img: '/images/5/cameras/0.png'
+    counter_img: '/images/5/cameras/1.png'
+    ticket_counter_img: '/images/3/cameras/0.png'
   '4F-C':
     floor: 4
     room_name: 'C食堂'
-    inside_img: '/img/4F_C_inside1.jpg'
-    inside2_img: '/img/4F_C_inside2.jpg'
-    counter_img: '/img/4F_C_counter.jpg'
-    ticket_counter_img: '/img/4F_ticket.jpg'
+    inside_img: '/images/7/cameras/0.png'
+    inside2_img: '/images/7/cameras/1.png'
+    counter_img: '/images/7/cameras/2.png'
+    ticket_counter_img: '/images/6/cameras/0.png'
   '4F-D':
     floor: 4
     room_name: 'D食堂'
-    inside_img: '/img/4F_D_inside1.jpg'
-    inside2_img: '/img/4F_D_inside2.jpg'
+    inside_img: '/images/8/cameras/0.png'
+    inside2_img: '/images/8/cameras/1.png'
 
 
 senders:
