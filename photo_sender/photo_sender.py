@@ -64,7 +64,8 @@ def main():
 
         logger.debug('interval = {}'.format(interval))
         logger.debug('api = {}'.format(api))
-        logger.debug('id = {}'.format(sender_id))
+        logger.debug('sender_id = {}'.format(sender_id))
+        logger.debug('camera_id = {}'.format(camera_id))
         logger.debug('secret = {}'.format(sender_secret))
         logger.debug('Configuration loaded')
     except KeyError as e:
