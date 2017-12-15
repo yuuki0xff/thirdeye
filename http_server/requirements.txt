@@ -1,3 +1,4 @@
 bottle
 gevent
 jinja2
+pyyaml
