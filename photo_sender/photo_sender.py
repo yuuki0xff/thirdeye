@@ -59,6 +59,7 @@ def main():
         interval = int(os.environ.get('PHOTO_SENDER_INTERVAL', '60'))
         api = os.environ['PHOTO_SENDER_API']
         sender_id = os.environ['PHOTO_SENDER_ID']
+        camera_id = os.environ['PHOTO_CAMERA_ID']
         sender_secret = os.environ['PHOTO_SENDER_SECRET']
 
         logger.debug('interval = {}'.format(interval))
@@ -79,7 +80,7 @@ def main():
     url = '{base_url}/images/{sender_id}/cameras/{camera_id}.png'.format(
         base_url=api,
         sender_id=sender_id,
-        camera_id=0,
+        camera_id=camera_id,
     )
 
     is_first = True
@@ -91,7 +92,7 @@ def main():
             is_first = False
 
             logger.debug('Getting a camera device')
-            camera = cv2.VideoCapture(0)
+            camera = cv2.VideoCapture(camera_id)
             try:
                 logger.debug('Capturing a photo')
                 buf = get_photo(camera)
