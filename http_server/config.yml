@@ -91,13 +91,15 @@ senders:
     secret: 'sender_secret'
     cameras:
       '0':
-        location: '食堂'
+        location: '食堂(1)'
       '1':
+        location: '食堂(2)'
+      '2':
         location: 'カウンター前'
   '8':  # D食堂内部に設置
     secret: 'sender_secret'
     cameras:
       '0':
-        location: '食堂'
+        location: '食堂(1)'
       '1':
-        location: 'カウンター前'
+        location: '食堂(2)'
