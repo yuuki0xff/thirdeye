@@ -29,10 +29,11 @@ def get_photo(camera):
     if not ret:
         raise ReadError()
 
+    # type(buf) will be numpy array
     ret, buf = cv2.imencode('.png', img)
     if not ret:
         raise EncodeError()
-    return bytes(buf)
+    return bytes(buf.tostring())
 
 
 def send_photo(session, url, buf):
